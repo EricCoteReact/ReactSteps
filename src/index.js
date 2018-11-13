@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-//using state:  setState, no more state mutations!
-//the right way most of the time
+//using state:  setState isn't immediate.  
+//the system will combine and schedule multiple setStates. 
+//this is now wrong
 class Counter extends React.Component{
     constructor(props) {
         super(props);
@@ -19,8 +20,10 @@ class Counter extends React.Component{
     }
 
     increase() {
-        const modifs =  {count: this.state.count + 1}
-        this.setState(modifs);
+        const modifs1 =  {count: this.state.count + 1};
+        this.setState(modifs1);
+        const modifs2 =  {count: this.state.count + 1};
+        this.setState(modifs2);
     }
 }
 
