@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-//using state:  using a setState function will solve the
-//scheduling problem with setState.
+//using state: replace bind with an arrow function
+//try removing bind to see the error!
 class Counter extends React.Component{
     constructor(props) {
         super(props);
@@ -13,16 +13,13 @@ class Counter extends React.Component{
         return ( 
             <>
                 <h1>Counter is {this.state.count}</h1>
-                <button onClick={this.increase.bind(this)} >Increase</button>
+                <button onClick={this.increase} >Increase</button>
             </>
         );
     }
 
-    increase() {
-        const modifs1 = (prevState) => ({count: prevState.count + 1});
-        this.setState(modifs1);
-        const modifs2 =  (prevState) => ({count: prevState.count + 1});
-        this.setState(modifs2);
+    increase = () => {
+        this.setState({count: this.state.count + 1});
     }
 }
 
