@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-//JSX can always be replaced with React.createElement
-function Hello() {
-    return React.createElement("h1", null, "Hello world!")
+//props can be used to pass data
+function Hello(props) {
+    return <h1>Hello {props.children}</h1>
 } 
 
 
-ReactDOM.render(React.createElement(Hello), document.getElementById('root'));
+ReactDOM.render(<Hello>Eric</Hello>, document.getElementById('root'));
 
