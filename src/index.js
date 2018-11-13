@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-//We can use classes we gain then a few things:
-//state and lifecycle methods
+//We can use destructuring to get props in classes
 class Hello extends React.Component{
     render() {
+        const {firstName, lastName} = this.props;
         return ( 
             <h1>
-                Hello {this.props.firstName} {this.props.lastName}!
+                Hello {firstName} {lastName}!
             </h1>
         );
     }
