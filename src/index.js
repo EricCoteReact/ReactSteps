@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-//We can use destructuring to get props in classes
-class Hello extends React.Component{
+//using state : initialize and show
+class Counter extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state={count: props.init};
+    }
+
     render() {
-        const {firstName, lastName} = this.props;
         return ( 
             <h1>
-                Hello {firstName} {lastName}!
+                Counter is {this.state.count}
             </h1>
         );
     }
@@ -15,6 +19,6 @@ class Hello extends React.Component{
 }
 
 
-ReactDOM.render(<Hello firstName="John" lastName="Smith" />, 
+ReactDOM.render(<Counter init="1" />, 
                 document.getElementById('root'));
 
