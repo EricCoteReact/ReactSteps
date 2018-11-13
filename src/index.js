@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-//using state:  setState, no more forceUpdate!
-
-//We have a warning, this is still not the right way.
+//using state:  setState, no more state mutations!
+//the right way most of the time
 class Counter extends React.Component{
     constructor(props) {
         super(props);
@@ -20,8 +19,8 @@ class Counter extends React.Component{
     }
 
     increase() {
-        this.state.count = this.state.count + 1;
-        this.setState(this.state);
+        const modifs =  {count: this.state.count + 1}
+        this.setState(modifs);
     }
 }
 
