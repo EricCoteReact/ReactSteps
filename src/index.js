@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-//using state:  setState isn't immediate.  
-//the system will combine and schedule multiple setStates. 
-//this is now wrong
+//using state:  using a setState function will solve the
+//scheduling problem with setState.
 class Counter extends React.Component{
     constructor(props) {
         super(props);
@@ -20,9 +19,9 @@ class Counter extends React.Component{
     }
 
     increase() {
-        const modifs1 =  {count: this.state.count + 1};
+        const modifs1 = (prevState) => ({count: prevState.count + 1});
         this.setState(modifs1);
-        const modifs2 =  {count: this.state.count + 1};
+        const modifs2 =  (prevState) => ({count: prevState.count + 1});
         this.setState(modifs2);
     }
 }
