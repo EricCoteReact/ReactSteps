@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-
-ReactDOM.render(React.createElement("h1", null, "Hello world!!!"), 
+//This syntax is called JSX
+ReactDOM.render(<h1>Hello world!</h1>, 
                 document.getElementById('root'));
 
