@@ -1,13 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-//We can create a component using a function
-//(rule: all component must start with an uppercase letter, 
-//while DOM elements start with a lowercase)
+//JSX can always be replaced with React.createElement
 function Hello() {
-    return <h1>Hello world!</h1>
+    return React.createElement("h1", null, "Hello world!")
 } 
 
 
-ReactDOM.render(<Hello />, document.getElementById('root'));
+ReactDOM.render(React.createElement(Hello), document.getElementById('root'));
 
