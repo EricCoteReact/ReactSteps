@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-//using state: using events
-//refresh by using a React.forceUpdate();
+//using state:  setState, no more forceUpdate!
 
 //We have a warning, this is still not the right way.
 class Counter extends React.Component{
@@ -22,7 +21,7 @@ class Counter extends React.Component{
 
     increase() {
         this.state.count = this.state.count + 1;
-        this.forceUpdate();
+        this.setState(this.state);
     }
 }
 
