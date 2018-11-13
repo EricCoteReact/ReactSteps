@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-//We need round backets in the following syntax
-function Hello(props) {
+//We can use destructuring instead of using props
+function Hello({firstName, lastName}) {
     return (
         <h1>
-            Hello {props.children} {props.lastName}
+            Hello {firstName} {lastName}!
         </h1>
     );
 } 
 
-ReactDOM.render(<Hello lastName="Smith">John</Hello>, 
+ReactDOM.render(<Hello firstName="John" lastName="Smith" />, 
                 document.getElementById('root'));
 
