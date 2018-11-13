@@ -2,10 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 //using state: using events
-//modify state and see nothing on the screen
-//We can use a ReactDOM.render to re-render
+//refresh by using a React.forceUpdate();
 
-//We have a warning, this is not the right way.
+//We have a warning, this is still not the right way.
 class Counter extends React.Component{
     constructor(props) {
         super(props);
@@ -23,10 +22,7 @@ class Counter extends React.Component{
 
     increase() {
         this.state.count = this.state.count + 1;
-        console.log(this.state.count);
-
-        //ReactDOM.render(<Counter init={this.state.count} />, 
-        //        document.getElementById('root'));
+        this.forceUpdate();
     }
 }
 
