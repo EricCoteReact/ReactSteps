@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-//using state: Old way of doing binding in the
-//constructor
+//using state: put arrow function in the onClick callback.
 class Counter extends React.Component{
     constructor(props) {
         super(props);
@@ -14,12 +13,12 @@ class Counter extends React.Component{
         return ( 
             <>
                 <h1>Counter is {this.state.count}</h1>
-                <button onClick={this.increase} >Increase</button>
+                <button onClick={(e) => this.increase()} >Increase</button>
             </>
         );
     }
 
-    increase () {
+    increase()  {
         this.setState({count: this.state.count + 1});
     }
 }
