@@ -1,5 +1,6 @@
 import React from 'react';
 import MyButton from './MyButton';
+import {Input} from 'reactstrap';
 
 export default class Counter extends React.Component{
     constructor(props) {
@@ -14,6 +15,7 @@ export default class Counter extends React.Component{
                 <MyButton onIncrease={this.increase} increment="1" />
                 <MyButton onIncrease={this.increase} increment="10" />
                 <MyButton onIncrease={this.increase} increment="100" />
+                <Input type="text" value={this.state.count} />              
             </>
         );
     }
