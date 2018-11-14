@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-//using state: replace bind with an arrow function
-//try removing bind to see the error!
+//using state: Old way of doing binding in the
+//constructor
 class Counter extends React.Component{
     constructor(props) {
         super(props);
         this.state={count: parseInt(props.init)};
+        this.increase = this.increase.bind(this);
     }
 
     render() {
@@ -18,7 +19,7 @@ class Counter extends React.Component{
         );
     }
 
-    increase = () => {
+    increase () {
         this.setState({count: this.state.count + 1});
     }
 }
