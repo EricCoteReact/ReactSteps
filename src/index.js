@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-//using state: put arrow function in the onClick callback.
+//using state: create different buttons that do different thingsss
 class Counter extends React.Component{
     constructor(props) {
         super(props);
@@ -13,13 +13,15 @@ class Counter extends React.Component{
         return ( 
             <>
                 <h1>Counter is {this.state.count}</h1>
-                <button onClick={(e) => this.increase()} >Increase</button>
+                <button onClick={(e) => this.increase(1)} >Increase 1</button>
+                <button onClick={(e) => this.increase(10)} >Increase 10</button>
+                <button onClick={(e) => this.increase(100)} >Increase 100</button>
             </>
         );
     }
 
-    increase()  {
-        this.setState({count: this.state.count + 1});
+    increase(incr)  {
+        this.setState({count: this.state.count + incr});
     }
 }
 
